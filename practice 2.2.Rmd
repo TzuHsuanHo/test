@@ -1,0 +1,223 @@
+---
+title: "manipulation_class"
+output: html_document
+date: "2024-09-24"
+---
+```{r}
+
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#[row,column]
+#e.g. student[,1]
+#e.g. student[1,2]
+
+#practice 2.1
+> fix(iris)
+> View(iris)
+> f<-iris$Species=="setosa"
+> setosa<-iris[f,]
+> View(setosa)
+> 
+> View(iris)
+> g<-iris$Species=="versicolor"
+> versicolor<-iris[g,]
+> View(versicolor)
+> View(iris)
+> 
+> h<-iris$Species=="virginica"
+> virginica<-iris[h,]
+
+ iris$color <- ifelse(iris$Species == "setosa", "purple",  
++                      ifelse(iris$Species == "versicolor", NA, 
++                             ifelse(iris$Species == "virginica", "pink", NA)))
+> 
+iris[order(iris$Sepal.Width, decreasing = T),]
+    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species  color
+16           5.7         4.4          1.5         0.4     setosa purple
+34           5.5         4.2          1.4         0.2     setosa purple
+33           5.2         4.1          1.5         0.1     setosa purple
+15           5.8         4.0          1.2         0.2     setosa purple
+6            5.4         3.9          1.7         0.4     setosa purple
+17           5.4         3.9          1.3         0.4     setosa purple
+19           5.7         3.8          1.7         0.3     setosa purple
+20           5.1         3.8          1.5         0.3     setosa purple
+45           5.1         3.8          1.9         0.4     setosa purple
+47           5.1         3.8          1.6         0.2     setosa purple
+118          7.7         3.8          6.7         2.2  virginica   pink
+132          7.9         3.8          6.4         2.0  virginica   pink
+11           5.4         3.7          1.5         0.2     setosa purple
+22           5.1         3.7          1.5         0.4     setosa purple
+49           5.3         3.7          1.5         0.2     setosa purple
+5            5.0         3.6          1.4         0.2     setosa purple
+23           4.6         3.6          1.0         0.2     setosa purple
+38           4.9         3.6          1.4         0.1     setosa purple
+110          7.2         3.6          6.1         2.5  virginica   pink
+1            5.1         3.5          1.4         0.2     setosa purple
+18           5.1         3.5          1.4         0.3     setosa purple
+28           5.2         3.5          1.5         0.2     setosa purple
+37           5.5         3.5          1.3         0.2     setosa purple
+41           5.0         3.5          1.3         0.3     setosa purple
+44           5.0         3.5          1.6         0.6     setosa purple
+7            4.6         3.4          1.4         0.3     setosa purple
+8            5.0         3.4          1.5         0.2     setosa purple
+12           4.8         3.4          1.6         0.2     setosa purple
+21           5.4         3.4          1.7         0.2     setosa purple
+25           4.8         3.4          1.9         0.2     setosa purple
+27           5.0         3.4          1.6         0.4     setosa purple
+29           5.2         3.4          1.4         0.2     setosa purple
+32           5.4         3.4          1.5         0.4     setosa purple
+40           5.1         3.4          1.5         0.2     setosa purple
+86           6.0         3.4          4.5         1.6 versicolor   <NA>
+137          6.3         3.4          5.6         2.4  virginica   pink
+149          6.2         3.4          5.4         2.3  virginica   pink
+24           5.1         3.3          1.7         0.5     setosa purple
+50           5.0         3.3          1.4         0.2     setosa purple
+57           6.3         3.3          4.7         1.6 versicolor   <NA>
+101          6.3         3.3          6.0         2.5  virginica   pink
+125          6.7         3.3          5.7         2.1  virginica   pink
+145          6.7         3.3          5.7         2.5  virginica   pink
+3            4.7         3.2          1.3         0.2     setosa purple
+30           4.7         3.2          1.6         0.2     setosa purple
+36           5.0         3.2          1.2         0.2     setosa purple
+43           4.4         3.2          1.3         0.2     setosa purple
+48           4.6         3.2          1.4         0.2     setosa purple
+51           7.0         3.2          4.7         1.4 versicolor   <NA>
+52           6.4         3.2          4.5         1.5 versicolor   <NA>
+71           5.9         3.2          4.8         1.8 versicolor   <NA>
+111          6.5         3.2          5.1         2.0  virginica   pink
+116          6.4         3.2          5.3         2.3  virginica   pink
+121          6.9         3.2          5.7         2.3  virginica   pink
+126          7.2         3.2          6.0         1.8  virginica   pink
+144          6.8         3.2          5.9         2.3  virginica   pink
+4            4.6         3.1          1.5         0.2     setosa purple
+10           4.9         3.1          1.5         0.1     setosa purple
+31           4.8         3.1          1.6         0.2     setosa purple
+35           4.9         3.1          1.5         0.2     setosa purple
+53           6.9         3.1          4.9         1.5 versicolor   <NA>
+66           6.7         3.1          4.4         1.4 versicolor   <NA>
+87           6.7         3.1          4.7         1.5 versicolor   <NA>
+138          6.4         3.1          5.5         1.8  virginica   pink
+140          6.9         3.1          5.4         2.1  virginica   pink
+141          6.7         3.1          5.6         2.4  virginica   pink
+142          6.9         3.1          5.1         2.3  virginica   pink
+2            4.9         3.0          1.4         0.2     setosa purple
+13           4.8         3.0          1.4         0.1     setosa purple
+14           4.3         3.0          1.1         0.1     setosa purple
+26           5.0         3.0          1.6         0.2     setosa purple
+39           4.4         3.0          1.3         0.2     setosa purple
+46           4.8         3.0          1.4         0.3     setosa purple
+62           5.9         3.0          4.2         1.5 versicolor   <NA>
+67           5.6         3.0          4.5         1.5 versicolor   <NA>
+76           6.6         3.0          4.4         1.4 versicolor   <NA>
+78           6.7         3.0          5.0         1.7 versicolor   <NA>
+85           5.4         3.0          4.5         1.5 versicolor   <NA>
+89           5.6         3.0          4.1         1.3 versicolor   <NA>
+92           6.1         3.0          4.6         1.4 versicolor   <NA>
+96           5.7         3.0          4.2         1.2 versicolor   <NA>
+103          7.1         3.0          5.9         2.1  virginica   pink
+105          6.5         3.0          5.8         2.2  virginica   pink
+106          7.6         3.0          6.6         2.1  virginica   pink
+113          6.8         3.0          5.5         2.1  virginica   pink
+117          6.5         3.0          5.5         1.8  virginica   pink
+128          6.1         3.0          4.9         1.8  virginica   pink
+130          7.2         3.0          5.8         1.6  virginica   pink
+136          7.7         3.0          6.1         2.3  virginica   pink
+139          6.0         3.0          4.8         1.8  virginica   pink
+146          6.7         3.0          5.2         2.3  virginica   pink
+148          6.5         3.0          5.2         2.0  virginica   pink
+150          5.9         3.0          5.1         1.8  virginica   pink
+9            4.4         2.9          1.4         0.2     setosa purple
+59           6.6         2.9          4.6         1.3 versicolor   <NA>
+64           6.1         2.9          4.7         1.4 versicolor   <NA>
+65           5.6         2.9          3.6         1.3 versicolor   <NA>
+75           6.4         2.9          4.3         1.3 versicolor   <NA>
+79           6.0         2.9          4.5         1.5 versicolor   <NA>
+97           5.7         2.9          4.2         1.3 versicolor   <NA>
+98           6.2         2.9          4.3         1.3 versicolor   <NA>
+104          6.3         2.9          5.6         1.8  virginica   pink
+108          7.3         2.9          6.3         1.8  virginica   pink
+55           6.5         2.8          4.6         1.5 versicolor   <NA>
+56           5.7         2.8          4.5         1.3 versicolor   <NA>
+72           6.1         2.8          4.0         1.3 versicolor   <NA>
+74           6.1         2.8          4.7         1.2 versicolor   <NA>
+77           6.8         2.8          4.8         1.4 versicolor   <NA>
+100          5.7         2.8          4.1         1.3 versicolor   <NA>
+115          5.8         2.8          5.1         2.4  virginica   pink
+122          5.6         2.8          4.9         2.0  virginica   pink
+123          7.7         2.8          6.7         2.0  virginica   pink
+127          6.2         2.8          4.8         1.8  virginica   pink
+129          6.4         2.8          5.6         2.1  virginica   pink
+131          7.4         2.8          6.1         1.9  virginica   pink
+133          6.4         2.8          5.6         2.2  virginica   pink
+134          6.3         2.8          5.1         1.5  virginica   pink
+60           5.2         2.7          3.9         1.4 versicolor   <NA>
+68           5.8         2.7          4.1         1.0 versicolor   <NA>
+83           5.8         2.7          3.9         1.2 versicolor   <NA>
+84           6.0         2.7          5.1         1.6 versicolor   <NA>
+95           5.6         2.7          4.2         1.3 versicolor   <NA>
+102          5.8         2.7          5.1         1.9  virginica   pink
+112          6.4         2.7          5.3         1.9  virginica   pink
+124          6.3         2.7          4.9         1.8  virginica   pink
+143          5.8         2.7          5.1         1.9  virginica   pink
+80           5.7         2.6          3.5         1.0 versicolor   <NA>
+91           5.5         2.6          4.4         1.2 versicolor   <NA>
+93           5.8         2.6          4.0         1.2 versicolor   <NA>
+119          7.7         2.6          6.9         2.3  virginica   pink
+135          6.1         2.6          5.6         1.4  virginica   pink
+70           5.6         2.5          3.9         1.1 versicolor   <NA>
+73           6.3         2.5          4.9         1.5 versicolor   <NA>
+90           5.5         2.5          4.0         1.3 versicolor   <NA>
+99           5.1         2.5          3.0         1.1 versicolor   <NA>
+107          4.9         2.5          4.5         1.7  virginica   pink
+109          6.7         2.5          5.8         1.8  virginica   pink
+114          5.7         2.5          5.0         2.0  virginica   pink
+147          6.3         2.5          5.0         1.9  virginica   pink
+58           4.9         2.4          3.3         1.0 versicolor   <NA>
+81           5.5         2.4          3.8         1.1 versicolor   <NA>
+82           5.5         2.4          3.7         1.0 versicolor   <NA>
+42           4.5         2.3          1.3         0.3     setosa purple
+54           5.5         2.3          4.0         1.3 versicolor   <NA>
+88           6.3         2.3          4.4         1.3 versicolor   <NA>
+94           5.0         2.3          3.3         1.0 versicolor   <NA>
+63           6.0         2.2          4.0         1.0 versicolor   <NA>
+69           6.2         2.2          4.5         1.5 versicolor   <NA>
+120          6.0         2.2          5.0         1.5  virginica   pink
+61           5.0         2.0          3.5         1.0 versicolor   <NA>
+> iris$Species=='versicolor'
+  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [16] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [31] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [46] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+ [61]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+ [76]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+ [91]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE
+[106] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[121] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+[136] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+> versicolor<-iris[iris$Species=='versicolor',]
+> versicolor$color<-NULL
+
