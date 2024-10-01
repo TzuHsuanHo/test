@@ -1,0 +1,55 @@
+---
+title: "practice 2.3"
+output: html_document
+date: "2024-10-01"
+---
+```{r}
+
+grass<-read.table('https://www.dipintothereef.com/uploads/3/7/3/5/37359245/rairuoho.txt',header=T, sep="\t", dec='.') # homework
+grass
+
+grass$treatment<-ifelse(grass$treatment=='nutrient', 'enriched','water') # exercise 1
+grass #exercise 1
+
+
+selection1 <- dplyr::select(grass, day3, day4, day5, day6, day7, day8) # exercise 2
+head(selection1, 48) # exercise 2
+
+long_selection1 <- pivot_longer(selection1,  cols = starts_with("day"),  names_to = "Day", values_to = "length") # exercise 2
+long_selection1 # exercise 2
+
+
+selection2 <- dplyr::select(grass, germinate, bed, treatment, spatial1, spatial2, row, column)  # exercise 3
+head(selection2, 48) # exercise 3
+merge_selection2 <- selection2%>%  unite("upper_left", spatial1, spatial2, sep = ", ") # exercise 3
+merge_selection2 # exercise 3
+
+rm_merge_selection2 <- merge_selection2[ ,-5 ] # exercise 4
+rm_merge_selection2 # exercise 4
+rm2_merge_selection2 <- rm_merge_selection2[ ,-5 ] # exercise 4
+rm2_merge_selection2 # exercise 4
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
